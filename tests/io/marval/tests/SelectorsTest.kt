@@ -34,13 +34,13 @@ class SelectorsTest : StringSpec() {
 
         "firstOf(String) selector should select the first character of a String" {
             forAll {a: String ->
-                a.length == 0 || Selectors.firstOf(a).isEqualTo(a.first())()
+                a.isEmpty() || Selectors.firstOf(a).isEqualTo(a.first())()
             }
         }
 
         "lastOf(String) selector should select the last character of a String" {
             forAll {a: String ->
-                a.length == 0 || Selectors.lastOf(a).isEqualTo(a.last())()
+                a.isEmpty() || Selectors.lastOf(a).isEqualTo(a.last())()
             }
         }
     }
