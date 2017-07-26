@@ -12,7 +12,7 @@ how to handle both invalid and valid data.
 Marval is built with Maven.
 
 ```bash
-$ git clone ????
+$ git clone https://gitlab.com/awilson/marval.git
 $ mvn clean install
 ```
 
