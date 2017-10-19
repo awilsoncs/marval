@@ -30,12 +30,12 @@ class Quantifiers {
          * Utility method for crossOf()
          */
         private fun crossOfRecursive(acc: Set<List<Any>>, vararg sets: Set<Any>): Set<Any> {
-            if(sets.isEmpty()) {
-                return acc
+            return if(sets.isEmpty()) {
+                acc
             } else {
                 var out: Set<List<Any>> = HashSet()
                 acc.forEach({ x -> sets[0].forEach({ y -> out.plus(x.plus(y)) }) })
-                return crossOfRecursive(out, *(sets.drop(0).toTypedArray()))
+                crossOfRecursive(out, *(sets.drop(0).toTypedArray()))
             }
         }
 

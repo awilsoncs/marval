@@ -15,9 +15,9 @@ class Rules {
          * Assert that the object is an alphabetical String.
          */
         fun isAlpha(x: Any?): Boolean {
-            when (x) {
-                is String -> return x.matches("[A-Za-z]*".toRegex())
-                else -> return false
+            return when (x) {
+                is String -> x.matches("[A-Za-z]*".toRegex())
+                else -> false
             }
         }
 
@@ -32,10 +32,10 @@ class Rules {
          * For numeric Strings, this rule only matches against the regex "-?[0-9]*\\.?[0-9".
          */
         fun isNumeric(x: Any?): Boolean {
-            when(x) {
-                is String -> return x.matches("-?[0-9]*\\.?[0-9]+".toRegex())
-                is Number -> return true
-                else -> return false
+            return when(x) {
+                is String -> x.matches("-?[0-9]*\\.?[0-9]+".toRegex())
+                is Number -> true
+                else -> false
             }
         }
 

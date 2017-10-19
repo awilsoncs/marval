@@ -16,9 +16,9 @@ class Selectors {
          * Selects the entire object.
          */
         fun the(target: Any?): Selection {
-            when (target) {
-                null -> return NullSelection()
-                else -> return SimpleSelection(target)
+            return when (target) {
+                null -> NullSelection()
+                else -> SimpleSelection(target)
             }
         }
 
